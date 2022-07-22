@@ -1,0 +1,10 @@
+data missing;
+set sasuser.xb;
+array cha[1] _character_ ;
+if missing(cha[1]) then output;
+array num[11] _numeric_ ;
+do i=1 to 11;
+if missing(num[i]) then output;
+end;
+proc print;
+run;

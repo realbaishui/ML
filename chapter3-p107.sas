@@ -1,0 +1,10 @@
+data missing;
+set sasuser.xb;
+array cha[1] name;
+if missing(cha[1]) then output;
+array num[10] gender age height weight time y1-y5;
+do i=1 to 10;
+if missing(num[i]) then output;
+end;
+proc print;
+run;

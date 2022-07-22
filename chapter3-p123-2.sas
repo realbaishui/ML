@@ -1,0 +1,13 @@
+proc univariate data=nomissing noprint;
+class id; 
+var height y2 y4;
+output out=nm mean=height y2 y4;
+run;
+data newxb;
+update xb9 nm;
+by id;
+height=round(height,1);
+y2=round(y2,1);
+y4=round(y4,1);
+proc print data=newxb;
+run;

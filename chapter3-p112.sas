@@ -1,0 +1,12 @@
+data missing;
+set sasuser.xb;
+array cha[*] _character_ ;
+do i=1 to dim(cha);
+if missing(cha[i]) then output;
+end;
+array num[*] _numeric_ ;
+do i=1 to dim(num);
+if missing(num[i]) then output;
+end;
+proc print;
+run;
